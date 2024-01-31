@@ -91,8 +91,9 @@ const createDice = (x, y, scene, duration = 1000) => {
 
 class Example extends Phaser.Scene {
   preload() {
-    this.load.image("dice-albedo", "/dice/dice-albedo.png");
-    this.load.obj("dice-obj", "/dice/dice.obj");
+    const baseUrl = import.meta.env.BASE_URL;
+    this.load.image("dice-albedo", baseUrl + "/dice/dice-albedo.png");
+    this.load.obj("dice-obj", baseUrl + "/dice/dice.obj");
   }
 
   create() {
